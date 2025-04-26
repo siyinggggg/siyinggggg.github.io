@@ -1,38 +1,267 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>About Siying</title>
-        <style>
-           #main-bg{
-            background: #f8f4f8;
-           }
-           h1{
-            font-family:avenir, helvetica, sans-serif;
-            color:blueviolet;
-           }
-           h3{
-            font-family:avenir, helvetica, sans-serif;
-           }
-           ul{
-            font-family:avenir, helvetica, sans-serif;
-            text-align:center;
-            list-style-position:inside;
-           }
-           .center{
-            text-align:center;
-           }
-        </style>
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Page Not Found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="game/styles.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <body id="main-bg">
-        <h1 class="center">Hey There, I'm Siying!</h1>
-        <h3 class="center">Fun Facts About Me:</h3>
-            <ul>
-                <li>My first ever adult job was a preschool teacher.</li>
-                <li>My favourite drink is bubble tea.</li>
-                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGhueWluejZlMHNuMTB2NXJlOW02ZDN2aGk4Mjh1azc4MDRjNjc3ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KxcLYdJ6dHebBy7ApL/giphy.gif" alt="Gif of a guinea pig bringing 2 cups of bubble tea to it's cheek" width="450">
-                <li>My favourite fictional character is Winnie the Pooh.</li>
-                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExamRma2p1bjkyc2VsdmlpaHRkMXJ6aDI4aTAxa3FhcHRwOXpqcWdsMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U26Aj5j5Yv3Hy/giphy.gif" alt="Winnie the Pooh playing on a windy day" width="450">
-            </ul>
-    </body>
+<style>
+  body {
+    margin: 0;
+    padding:0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-x:hidden;
+    background-image: url("dots.jpg");
+  }
+ 
+  .message h1 {
+    font-size: 13rem;
+    color: #2B5F53;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 10px;
+    margin-bottom: -50px;
+  }
+
+  .message p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color:#58534d;
+    margin-top: 0;
+    font-family: "Playpen Sans", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  
+  .btn {
+    background-color: white;
+    color: #2B5F53;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: solid;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-family: "Playpen Sans", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .btn:hover {
+    background-color: #ff7043;
+    color:white;
+  }
+
+  .memory-section {
+    margin-bottom: 80px;
+    animation: fade-in 0.5s ease 3s forwards;
+  }
+  .memory-section h5 {
+    font-size: 1rem;
+    font-family: "Playpen Sans", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #58534d;
+    text-align:center;
+    margin:40px;
+    }
+    h5 {
+    font-size: 1rem;
+    font-family: "Playpen Sans", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #58534d;
+    text-align:center;
+    margin:20px;
+    }
+ 
+  #header img, 
+  #footer img {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  #deco-left {
+    position: absolute;
+    top: 50px;
+    z-index: 0;
+    opacity: 0.95;
+    pointer-events: none;
+    left: 0;
+    transform: translateX(-50%);
+  }
+  
+  #deco-right {
+    position: absolute;
+    top: 400px;
+    z-index: 0;
+    opacity: 0.95;
+    pointer-events: none;
+    right:-400px;
+    transform: translateX(-50%);
+  }
+  
+  .game-wrapper {
+  position: relative;
+  width: 100%;
+}
+  html, body {
+    height: auto;
+    overflow-y: auto;
+  }
+  .parallax-snack {
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+}
+.message-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top:40px;
+}
+.boy {
+  width: 150px;
+  height: auto;
+  animation: runBounce 1s ease-in-out infinite alternate;
+  transform-origin: bottom;
+}
+.ribbon-banner {
+  background: linear-gradient(135deg, #A7C6DA); /* Brighter orange ribbon */
+  padding: 16px 32px;
+  display: inline-block;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 40px;
+  margin-bottom: -10px;
+  transform: rotate(-2deg); /* Fun, casual tilt */
+}
+.ribbon-text {
+  font-family: 'Bangers', cursive;
+  font-size: 2.8rem;
+  color: #fffbea;
+  letter-spacing: 1px;
+  margin: 0;
+  text-shadow: 2px 2px 0 #2A3D66;
+}
+.modal{
+  display:none;
+  position:fixed;
+  z-index:1;
+  left:0;
+  right:0;
+  width:100%;
+  height:100%;
+  overflow:none;
+  background-color:antiquewhite;
+}
+.modal-content{
+  background-color:antiquewhite;
+  margin:15% auto;
+  padding:20px;
+  border:1px solid #888;
+  width:80%;
+}
+.close{
+  color:#aaa;
+  float:right;
+  font-size:28px;
+  font-weight:bold;
+}
+.close:hover,
+.cloe:focus{
+  color:black;
+  text-decoration:none;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+  <div id="header"> 
+    <img src="header.png" alt="Header">
+  </div>
+
+  <div class="message">
+    <div class="message-flex">
+      <img src="boy.png" alt="Running Boy" class="boy" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100"
+      />
+      <h1 data-aos="zoom-in" data-aos-duration="1000">404</h1>
+    </div>
+    <p>Aiyo, run until lost liao... Still wanna go home?</p>
+  </div>
+  
+  <a href="https://shop.wheniwasfour.com/" class="btn">Press here lah!</a>
+  <h5>...If not, since you're still here test your memory a bit lah!</h5>
+
+  <div class="game-wrapper">
+    <div id="deco-left" class="parallax-snack" data-speed="0.3">
+      <img
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-anchor-placement="center-bottom"
+        src="side-left.png"
+        width="400px">
+    </div>
+    <div id="deco-right" class="parallax-snack" data-speed="0.4">
+      <img
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-anchor-placement="center-bottom"
+        src="side-right.png"
+        width="450px">
+    </div>
+  </div>
+  <div class="ribbon-banner" data-aos="fade-down" data-aos-duration="1000">
+    <h2 class="ribbon-text">Munch & Match Game</h2>
+  </div>
+  
+  <div class="memory-section">
+    <h5>Flip the cards, match the childhood items, and see if your brain still got that old-school power.</br>Play the game to win a voucher!</h5>
+    <section class="memory-game"></section>
+  </div>
+
+  <section>
+  <div id="game-modal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom">
+      <div class="w3-container w3-padding w3-center">
+        <span onclick="document.getElementById('game-modal').style.display='none'" 
+        class="w3-circle w3-button w3-black w3-display-topright" style="top:-16px;right:-16px">&times;</span>
+      
+       <h2>Steady la, brain still power!</h2>
+       <p>Here's a <span>10% off voucher</span> just for you: POWER10</p>
+  </div>
+</section>
+
+  <div id="footer">
+    <img src="footer.png" alt="Footer">
+  </div>
+
+    <script src="game/scripts.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init();</script> 
+</body>
 </html>
